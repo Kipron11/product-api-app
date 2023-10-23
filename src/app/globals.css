@@ -19,6 +19,6 @@
 
 button:disabled {
   background-color: rgb(236, 236, 236);
-  color:rgba(173, 173, 173, 0.562);
+  color: rgba(173, 173, 173, 0.562);
   pointer-events: none;
 }

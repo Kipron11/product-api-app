@@ -12,7 +12,7 @@ const Search = ({ products, onSearch }: SearchModel) => {
       );
       onSearch(filteredProducts);
     }, 500);
-    
+
     return () => clearTimeout(delaySearch);
   }, [search, onSearch, products]);
 

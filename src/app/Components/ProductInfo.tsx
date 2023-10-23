@@ -3,9 +3,12 @@ import { ProductModel } from "../Models/ProductModel";
 
 const ProductInfo = ({ product }: { product: ProductModel }) => {
   const { id, name, price, currency, category, description } = product;
-  
+
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg my-4 max-[600px]:text-center" key={id}>
+    <div
+      className="max-w-sm rounded overflow-hidden shadow-lg my-4 max-[600px]:text-center"
+      key={id}
+    >
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{name} </div>
         <p className="text-gray-700 text-base">{description}</p>

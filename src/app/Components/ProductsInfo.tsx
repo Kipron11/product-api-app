@@ -7,7 +7,9 @@ const ProductsInfo = ({ product }: { product: ProductModel }) => {
   return (
     <div className="max-w-lg rounded overflow-hidden shadow-lg my-4 hover:bg-gray-300 transition">
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 max-[600px]:text-center">{name}</div>
+        <div className="font-bold text-xl mb-2 max-[600px]:text-center">
+          {name}
+        </div>
       </div>
       <div className="px-6 pt-4 pb-2 max-[600px]:flex max-[600px]:items-center max-[600px]:flex-col">
         <div className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 min-w-[85px] text-center">

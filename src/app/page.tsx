@@ -73,10 +73,10 @@ const ProductsPage = () => {
   };
 
   const showNothingFound = () => {
-    if(!isLoading && currentItems.length == 0 ) {
-      return( <NothingFound />)
+    if (!isLoading && currentItems.length == 0) {
+      return <NothingFound />;
     }
-  }
+  };
 
   useEffect(() => {
     fetchProductData();
