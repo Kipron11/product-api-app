@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, notFound } from "next/navigation";
 import { ProductModel } from "../../Models/ProductModel";
 import { fetchProducts } from "../../Services/ProductService";
 import Loader from "../../Components/Loader/Loader";
@@ -10,7 +10,6 @@ const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const [isLoading, setIsLoading] = useState(true);
   const [product, setProduct] = useState<ProductModel>();
-
   useEffect(() => {
     const fetchProductData = async () => {
       try {
@@ -32,9 +31,7 @@ const ProductPage = () => {
   return (
     <div className="p-5">
       {isLoading && <Loader />}
-      {product && (
-        <ProductInfo product={product} />
-      )}
+      {product && <ProductInfo product={product} />}
     </div>
   );
 };

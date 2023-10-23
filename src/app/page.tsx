@@ -6,6 +6,7 @@ import Search from "./Components/Search";
 import ProductsInfo from "./Components/ProductsInfo";
 import Pagination from "./Components/Pagination";
 import Loader from "./Components/Loader/Loader";
+import NothingFound from "./Components/NothingFound";
 
 const ProductsPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -71,6 +72,12 @@ const ProductsPage = () => {
     }
   };
 
+  const showNothingFound = () => {
+    if(!isLoading && currentItems.length == 0 ) {
+      return( <NothingFound />)
+    }
+  }
+
   useEffect(() => {
     fetchProductData();
   }, []);
@@ -93,6 +100,7 @@ const ProductsPage = () => {
       {currentItems.map((product: ProductModel) => (
         <ProductsInfo key={product.id} product={product} />
       ))}
+      {showNothingFound()}
       {showPagination()}
     </div>
   );
